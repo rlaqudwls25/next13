@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import styles from "../styles/detail.module.scss";
 const HomeButton = () => {
   const router = useRouter();
   const goTohome = () => {
@@ -8,7 +9,9 @@ const HomeButton = () => {
   };
   return (
     <>
-      <button onClick={goTohome}>홈으로</button>
+      <button className={styles.homeButton} onClick={goTohome}>
+        홈으로
+      </button>
     </>
   );
 };

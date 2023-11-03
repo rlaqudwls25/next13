@@ -1,6 +1,7 @@
 "use client";
 
 import revalidate from "@/utils/revalidate";
+import styles from "../styles/list.module.scss";
 
 type Props = {
   tag: string;
@@ -11,5 +12,11 @@ export default function RevalidateButton({ tag }: Props) {
     await revalidate(tag);
   };
 
-  return <button onClick={handleClick}>캐시 비우기</button>;
+  return (
+    <div className={styles.buttonBox}>
+      <button className={styles.revalidateButton} onClick={handleClick}>
+        캐시 비우기
+      </button>
+    </div>
+  );
 }
